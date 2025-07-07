@@ -60,3 +60,64 @@ Technologies utilisées
     TensorFlow
 
     Keras
+    
+🏃‍♂️ Calories Burnt Prediction
+
+Objectif
+
+Prédire automatiquement la dépense calorique à partir de caractéristiques physiologiques et d’activité.
+Données utilisées
+
+    Type : données tabulaires
+
+    Sources : fichier Excel contenant les variables :
+
+        Gender
+
+        Age
+
+        Height
+
+        Weight
+
+        Duration
+
+        Heart Rate
+
+        Body Temperature
+
+Méthodologie
+
+    Exploration et analyse des données
+
+        Étude des corrélations entre les variables et la cible
+
+        Suppression des features peu contributives pour réduire la complexité
+
+    Prétraitement
+
+        Encodage des variables catégoriques
+
+        Détection et traitement des valeurs aberrantes
+
+    Séparation des données
+
+        Ensemble d’entraînement
+
+        Ensemble de validation
+
+    Entraînement de modèles
+
+        Linear Regression
+
+        Random Forest Regressor
+
+        XGB Regressor
+
+    Évaluation
+
+        Fonction de perte : Mean Absolute Error
+
+Déploiement
+
+Le modèle présentant les meilleures performances est sauvegardé et prêt à être intégré dans une application pour prédire la dépense énergétique quotidienne.
