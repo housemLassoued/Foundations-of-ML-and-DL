@@ -1,6 +1,10 @@
 Ce repository contient un ensemble de notebooks de machine learning et de deep learning basiques, constituant un point de départ pour apprendre ces technologies.
+
+
 🩺 Projet : Breast Cancer Detection
 Détection automatique de la présence de tumeurs du sein à partir d’images médicales.
+
+
 Méthodologie
 
 Le modèle utilise le transfert learning avec InceptionV3 pré-entraîné sur ImageNet, combiné à un perceptron multicouche (MLP) servant de classificateur.
