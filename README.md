@@ -61,7 +61,7 @@ Technologies utilisées
 
     Keras
     
-🏃‍♂️ Calories Burnt Prediction
+🏃‍♂️ Projet: Calories Burnt Prediction
 
 Objectif
 
