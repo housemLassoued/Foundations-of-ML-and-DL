@@ -316,3 +316,57 @@ Déploiement
 
 Ce modèle est prêt à être intégré dans une application de messagerie pour filtrer automatiquement les spams et alléger la charge de traitement des utilisateurs.
 
+🐕 Projet : Dog Breed Classification
+Objectif
+
+Classer automatiquement des images de chiens en 70 races différentes grâce à un modèle de deep learning.
+Données
+
+    Source : fichier Excel avec les chemins des images et leurs labels
+
+    Entraînement : 7 946 images RGB (224×224)
+
+    Test/Validation : 700 images
+
+    Nombre de classes : 70 races
+
+Pipeline de traitement
+
+    Prétraitement
+
+        Normalisation des images
+
+        Augmentation des données :
+
+            Zoom
+
+            Flip horizontal
+
+    Modélisation
+
+        ResNet101V2 pré-entraîné sur ImageNet comme extracteur de features (poids gelés)
+
+        MLP ajouté en tête pour la classification multiclasse
+
+    Entraînement
+
+        Optimiseur : Adam
+
+        Epochs : 25
+
+        EarlyStopping avec patience = 10 epochs
+
+Résultats
+
+    Accuracy : 93%
+
+Déploiement
+
+Le modèle est prêt à être déployé dans une application pour reconnaître automatiquement la race des chiens à partir d’images.
+Technologies
+
+    Python
+
+    TensorFlow
+
+    Keras
