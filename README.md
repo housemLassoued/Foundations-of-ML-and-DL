@@ -194,3 +194,58 @@ Déploiement
 
 Le modèle final est prêt à être intégré dans une application permettant de prédire la pluviométrie et d’aider à la prise de décision dans l’agriculture et la météorologie.
 
+💳 Credit Card Fraud Detection
+
+Objectif
+
+Détecter les fraudes par carte bancaire grâce à un modèle de classification supervisée et améliorer la sécurité des transactions.
+Données
+
+    Type : données tabulaires, stockées dans un fichier Excel
+
+    Contenu : uniquement des variables numériques
+
+    Problématique : fort déséquilibre des classes
+
+        Transactions normales : 284 315
+
+        Transactions frauduleuses : 492
+
+Pipeline de traitement
+
+    Gestion du déséquilibre
+
+        Upsampling de la classe minoritaire pour équilibrer le dataset.
+
+    Séparation des données
+
+        Création d’ensembles d’entraînement et de validation.
+
+    Entraînement des modèles
+
+        Modèles testés :
+
+            RandomForestClassifier
+
+            SVC
+
+            GaussianNB
+
+            DecisionTreeClassifier
+
+    Résultats
+
+        Meilleur modèle : RandomForestClassifier
+
+        Accuracy : 99 %
+
+        Precision : 91 %
+
+        Recall : 79 %
+
+        F1 Score : 85 %
+
+Déploiement
+
+Le modèle peut être déployé dans des applications de surveillance des transactions bancaires afin de détecter et prévenir la fraude en temps réel.
+
