@@ -2,6 +2,7 @@ Ce repository contient un ensemble de notebooks de machine learning et de deep l
 
 
 🩺 **Projet : Breast Cancer Detection**
+
 Détection automatique de la présence de tumeurs du sein à partir d’images médicales.
 
 
@@ -63,7 +64,7 @@ Technologies utilisées
     
 🏃‍♂️ **Projet: Calories Burnt Prediction**
 
-**Objectif*
+*Objectif*
 
 Prédire automatiquement la dépense calorique à partir de caractéristiques physiologiques et d’activité.
 Données utilisées
