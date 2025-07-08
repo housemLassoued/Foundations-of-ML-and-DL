@@ -121,6 +121,7 @@ Méthodologie
 Déploiement
 
 Le modèle présentant les meilleures performances est sauvegardé et prêt à être intégré dans une application pour prédire la dépense
+énergétique quotidienne.
 
 ☔ Classifying Rainy Days
 
@@ -193,4 +194,3 @@ Déploiement
 
 Le modèle final est prêt à être intégré dans une application permettant de prédire la pluviométrie et d’aider à la prise de décision dans l’agriculture et la météorologie.
 
-énergétique quotidienne.
