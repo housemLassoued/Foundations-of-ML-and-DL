@@ -194,7 +194,7 @@ Déploiement
 
 Le modèle final est prêt à être intégré dans une application permettant de prédire la pluviométrie et d’aider à la prise de décision dans l’agriculture et la météorologie.
 
-💳 Credit Card Fraud Detection
+💳 Projet: Credit Card Fraud Detection
 
 Objectif
 
@@ -249,7 +249,7 @@ Déploiement
 
 Le modèle peut être déployé dans des applications de surveillance des transactions bancaires afin de détecter et prévenir la fraude en temps réel.
 
-✉️ Detecting Spam Emails
+✉️ Projet: Detecting Spam Emails
 
 Objectif
 
