@@ -1,11 +1,11 @@
 Ce repository contient un ensemble de notebooks de machine learning et de deep learning basiques, constituant un point de départ pour apprendre ces technologies.
 
 
-🩺 Projet : Breast Cancer Detection
+🩺 **Projet : Breast Cancer Detection**
 Détection automatique de la présence de tumeurs du sein à partir d’images médicales.
 
 
-Méthodologie
+*Méthodologie*
 
 Le modèle utilise le transfert learning avec InceptionV3 pré-entraîné sur ImageNet, combiné à un perceptron multicouche (MLP) servant de classificateur.
 Entraînement
@@ -30,7 +30,7 @@ Le modèle a été entraîné en deux phases :
 
         50 epochs supplémentaires
 
-Callbacks utilisés
+*Callbacks utilisés*
 
     ModelCheckpoint : sauvegarde du meilleur modèle
 
@@ -38,7 +38,7 @@ Callbacks utilisés
 
     ReduceLROnPlateau : diminution du learning rate si la perte stagne (3 epochs)
 
-Évaluation
+*Évaluation*
 
 Le modèle a été évalué sur un jeu de test en mesurant :
 
@@ -50,7 +50,7 @@ Le modèle a été évalué sur un jeu de test en mesurant :
 
     F1 Score
 
-Objectif
+*Objectif*
 
 Ce modèle est conçu pour être sauvegardé et déployé dans des environnements hospitaliers afin d’assister la détection précoce du cancer du sein.
 Technologies utilisées
@@ -61,9 +61,9 @@ Technologies utilisées
 
     Keras
     
-🏃‍♂️ Projet: Calories Burnt Prediction
+🏃‍♂️ **Projet: Calories Burnt Prediction**
 
-Objectif
+**Objectif*
 
 Prédire automatiquement la dépense calorique à partir de caractéristiques physiologiques et d’activité.
 Données utilisées
@@ -86,7 +86,7 @@ Données utilisées
 
         Body Temperature
 
-Méthodologie
+*Méthodologie*
 
     Exploration et analyse des données
 
@@ -118,14 +118,14 @@ Méthodologie
 
         Fonction de perte : Mean Absolute Error
 
-Déploiement
+*Déploiement*
 
 Le modèle présentant les meilleures performances est sauvegardé et prêt à être intégré dans une application pour prédire la dépense
 énergétique quotidienne.
 
-☔ Projet : Classifying Rainy Days
+☔ **Projet : Classifying Rainy Days**
 
-Objectif
+*Objectif*
 
 Prédire si un jour est pluvieux ou non en utilisant des données météorologiques tabulaires.
 Variables utilisées
@@ -144,7 +144,7 @@ Variables utilisées
 
     Wind speed
 
-Pipeline de traitement
+*Pipeline de traitement*
 
     Analyse des données
 
@@ -190,13 +190,13 @@ Pipeline de traitement
 
         F1 Score : 86%
 
-Déploiement
+*Déploiement*
 
 Le modèle final est prêt à être intégré dans une application permettant de prédire la pluviométrie et d’aider à la prise de décision dans l’agriculture et la météorologie.
 
-💳 Projet : Credit Card Fraud Detection
+💳 **Projet : Credit Card Fraud Detection**
 
-Objectif
+*Objectif*
 
 Détecter les fraudes par carte bancaire grâce à un modèle de classification supervisée et améliorer la sécurité des transactions.
 Données
@@ -211,7 +211,7 @@ Données
 
         Transactions frauduleuses : 492
 
-Pipeline de traitement
+*Pipeline de traitement*
 
     Gestion du déséquilibre
 
@@ -245,13 +245,13 @@ Pipeline de traitement
 
         F1 Score : 85 %
 
-Déploiement
+*Déploiement*
 
 Le modèle peut être déployé dans des applications de surveillance des transactions bancaires afin de détecter et prévenir la fraude en temps réel.
 
-✉️ Projet : Detecting Spam Emails
+✉️ **Projet : Detecting Spam Emails**
 
-Objectif
+*Objectif*
 
 Détecter automatiquement les emails indésirables afin d’améliorer l’organisation et la sécurité des boîtes de réception.
 Données
@@ -270,7 +270,7 @@ Données
 
         Spam : 747
 
-Pipeline de traitement
+*Pipeline de traitement*
 
     Prétraitement des labels
 
@@ -312,12 +312,13 @@ Pipeline de traitement
 
             Accuracy : 99 %
 
-Déploiement
+*Déploiement*
 
 Ce modèle est prêt à être intégré dans une application de messagerie pour filtrer automatiquement les spams et alléger la charge de traitement des utilisateurs.
 
-🐕 Projet : Dog Breed Classification
-Objectif
+🐕 **Projet : Dog Breed Classification**
+
+*Objectif*
 
 Classer automatiquement des images de chiens en 70 races différentes grâce à un modèle de deep learning.
 Données
@@ -330,7 +331,7 @@ Données
 
     Nombre de classes : 70 races
 
-Pipeline de traitement
+*Pipeline de traitement*
 
     Prétraitement
 
@@ -356,11 +357,11 @@ Pipeline de traitement
 
         EarlyStopping avec patience = 10 epochs
 
-Résultats
+*Résultats*
 
     Accuracy : 93%
 
-Déploiement
+*Déploiement*
 
 Le modèle est prêt à être déployé dans une application pour reconnaître automatiquement la race des chiens à partir d’images.
 Technologies
