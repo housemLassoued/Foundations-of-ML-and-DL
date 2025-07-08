@@ -120,4 +120,77 @@ Méthodologie
 
 Déploiement
 
-Le modèle présentant les meilleures performances est sauvegardé et prêt à être intégré dans une application pour prédire la dépense énergétique quotidienne.
+Le modèle présentant les meilleures performances est sauvegardé et prêt à être intégré dans une application pour prédire la dépense
+
+☔ Classifying Rainy Days
+
+Objectif
+
+Prédire si un jour est pluvieux ou non en utilisant des données météorologiques tabulaires.
+Variables utilisées
+
+    Pressure
+
+    Temperature
+
+    Humidity
+
+    Cloud cover
+
+    Sunshine
+
+    Wind direction
+
+    Wind speed
+
+Pipeline de traitement
+
+    Analyse des données
+
+        Étude des corrélations avec la variable cible (rainfall).
+
+        Suppression des variables à faible impact.
+
+    Prétraitement
+
+        Encodage des variables catégoriques.
+
+        Traitement des valeurs aberrantes et des valeurs manquantes.
+
+        Normalisation des features (moyenne = 0, écart-type = 1).
+
+    Gestion du déséquilibre des classes
+
+        Upsampling de la classe minoritaire (no rain) pour équilibrer les classes.
+
+    Entraînement et validation
+
+        Séparation des données en training set et validation set.
+
+        Modèles testés :
+
+            RandomForestClassifier
+
+            SVC
+
+            XGBClassifier
+
+            DecisionTreeClassifier
+
+    Résultats du meilleur modèle
+
+        Modèle choisi : RandomForestClassifier
+
+        Accuracy : 87%
+
+        Precision : 91%
+
+        Recall : 82%
+
+        F1 Score : 86%
+
+Déploiement
+
+Le modèle final est prêt à être intégré dans une application permettant de prédire la pluviométrie et d’aider à la prise de décision dans l’agriculture et la météorologie.
+
+énergétique quotidienne.
