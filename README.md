@@ -249,3 +249,70 @@ Déploiement
 
 Le modèle peut être déployé dans des applications de surveillance des transactions bancaires afin de détecter et prévenir la fraude en temps réel.
 
+✉️ Detecting Spam Emails
+
+Objectif
+
+Détecter automatiquement les emails indésirables afin d’améliorer l’organisation et la sécurité des boîtes de réception.
+Données
+
+    Type : données tabulaires (Excel)
+
+    Variables :
+
+        Message : texte des emails (anglais)
+
+        Category : label (ham ou spam)
+
+    Répartition :
+
+        Ham : 4 825
+
+        Spam : 747
+
+Pipeline de traitement
+
+    Prétraitement des labels
+
+        Encodage :
+
+            ham = 0
+
+            spam = 1
+
+    Rééquilibrage des classes
+
+        Upsampling des messages spam pour corriger le déséquilibre.
+
+    Nettoyage des textes
+
+        Passage en minuscules
+
+        Suppression des caractères non alphabétiques
+
+        Suppression des stop words anglais
+
+        Lemmatisation des mots
+
+    Vectorisation
+
+        TF-IDF pour pondérer les termes selon leur importance.
+
+    Entraînement et évaluation
+
+        Modèles :
+
+            Logistic Regression
+
+            Random Forest Classifier
+
+        Résultat :
+
+            Meilleur modèle : RandomForestClassifier
+
+            Accuracy : 99 %
+
+Déploiement
+
+Ce modèle est prêt à être intégré dans une application de messagerie pour filtrer automatiquement les spams et alléger la charge de traitement des utilisateurs.
+
