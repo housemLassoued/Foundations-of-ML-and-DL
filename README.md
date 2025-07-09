@@ -519,6 +519,122 @@
 </ul>
 
 <hr/>
+
 <p align="center">
-  <img src="https://media.giphy.com/media/3oKIPsx2edrJp2g2s8/giphy.gif" width="300" alt="Data Visualization"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="400" alt="Coding GIF"/>
 </p>
+
+<h1 align="center">👁️✋ Face and Hand Landmarks Detection</h1>
+
+<p align="center">
+  <em>Real-time detection of face, hand, and body landmarks using MediaPipe and OpenCV.</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Project Objective</h2>
+
+<p>
+  This project leverages the <strong>MediaPipe</strong> library in combination with <strong>OpenCV</strong> to detect and display landmarks on the face, hands, and body of a person captured in real time by a webcam.
+  Landmarks are used to identify specific features such as the positions of eyes, nose, fingers, etc.
+  This type of system can be applied to various use cases:
+</p>
+
+<ul>
+  <li>🔒 <strong>Security:</strong> Detecting and identifying individuals in public places (e.g., shopping centers)</li>
+  <li>🖐️ <strong>Human-Computer Interaction:</strong> Controlling systems via gestures</li>
+  <li>👥 <strong>Behavior Analysis:</strong> Monitoring and analyzing human behavior</li>
+</ul>
+
+<h2>🛠️ Libraries Used</h2>
+
+<ul>
+  <li><strong>OpenCV (cv2):</strong> Capturing and processing webcam images</li>
+  <li><strong>MediaPipe (mp):</strong> Detecting face, hand, and body landmarks</li>
+  <li><strong>time:</strong> Calculating frames per second (FPS)</li>
+</ul>
+
+<h2>⚙️ Processing Steps</h2>
+
+<h3>1️⃣ Video Capture Initialization</h3>
+
+<ul>
+  <li>Video capture is initialized using <code>cv2.VideoCapture(0)</code>, where 0 is the default camera.</li>
+  <li>Frames are resized to <strong>800×600</strong> for better readability and faster processing.</li>
+</ul>
+
+<h3>2️⃣ Loading the Holistic Model</h3>
+
+<ul>
+  <li>The pre-trained <strong>MediaPipe Holistic</strong> model is loaded with:
+    <ul>
+      <li><code>min_detection_confidence=0.5</code></li>
+      <li><code>min_tracking_confidence=0.5</code></li>
+    </ul>
+  </li>
+  <li>This model can simultaneously detect:
+    <ul>
+      <li>Face landmarks (eyes, nose, mouth, etc.)</li>
+      <li>Hand landmarks (left and right)</li>
+      <li>Body pose landmarks</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>3️⃣ Frame Processing</h3>
+
+For each frame captured:
+
+<ul>
+  <li><strong>Color conversion:</strong> Convert BGR (OpenCV) to RGB (MediaPipe)</li>
+  <li><strong>Disable writeable flag:</strong> Optimize performance during detection</li>
+  <li><strong>Landmark detection:</strong> Process the frame with Holistic model</li>
+  <li><strong>Enable writeable flag:</strong> Allow annotations</li>
+  <li><strong>Convert RGB back to BGR:</strong> For OpenCV display</li>
+</ul>
+
+<h3>4️⃣ Drawing Landmarks</h3>
+
+<ul>
+  <li>Face landmarks: Drawn with colored contours</li>
+  <li>Hand landmarks: Drawn with connections for left and right hands</li>
+  <li>Body landmarks: Optionally drawn for full body pose</li>
+</ul>
+
+<h3>5️⃣ FPS Calculation</h3>
+
+<ul>
+  <li>Elapsed time between frames is measured</li>
+  <li>FPS is calculated as the inverse of elapsed time</li>
+  <li>Displayed at the top of the video feed for performance monitoring</li>
+</ul>
+
+<h3>6️⃣ Display and Exit</h3>
+
+<ul>
+  <li>The final frame with landmarks is shown in a window titled <strong>"Facial and Hand Landmarks"</strong></li>
+  <li>The loop continues until the user presses <code>'q'</code> to stop and close the window</li>
+</ul>
+
+<h2>🌟 Potential Applications</h2>
+
+<ul>
+  <li>🔐 <strong>Security:</strong> Identifying individuals using facial landmarks</li>
+  <li>✋ <strong>Gesture Interaction:</strong> Controlling applications with hand or body gestures</li>
+  <li>🏃‍♂️ <strong>Sports Analysis:</strong> Tracking posture and movements to improve performance</li>
+  <li>🎮 <strong>Interactive Games:</strong> Controlling virtual objects via body and hand movements</li>
+</ul>
+
+<hr/>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>MediaPipe</li>
+  <li>OpenCV</li>
+</ul>
+<p align="center">
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="400" alt="Matrix GIF"/>
+</p>
+
