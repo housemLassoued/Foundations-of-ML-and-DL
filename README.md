@@ -755,3 +755,89 @@ For each frame captured:
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm55eDJhZ2h3YzVpZTBqbjBlbHR6bm9jOHR1YW5qZ3J6Mm9yMzd2aCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WFZvB7VIXBgiz3oDXE/giphy.gif" width="300" alt="Medical AI"/>
 </p>
 
+<h1 align="center">🎤 TED Talks Recommendation System</h1>
+
+<p align="center">
+  <em>Building an intelligent recommendation system to suggest TED talks based on content similarity, popularity, speaker, and topics.</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  The goal of this project is to develop a recommendation system for TED talks. Talks are suggested based on their content similarity, popularity, main speaker, tags, event, and themes.
+</p>
+
+<h2>📚 Data and Content</h2>
+
+<ul>
+  <li><strong>Data Source:</strong> TED talk dataset containing metadata and transcripts</li>
+  <li><strong>Content Features:</strong>
+    <ul>
+      <li>Title</li>
+      <li>Description</li>
+      <li>Transcript</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>⚙️ Processing Pipeline</h2>
+
+<ul>
+  <li><strong>Text Preprocessing:</strong>
+    <ul>
+      <li>Lowercasing all text</li>
+      <li>Removing punctuation</li>
+      <li>Removing stopwords</li>
+      <li>Lemmatizing words to their base form to reduce noise</li>
+    </ul>
+  </li>
+  <li><strong>Vectorization:</strong>
+    <ul>
+      <li>Using <code>TfidfVectorizer</code> from scikit-learn to transform text into numerical representations</li>
+      <li>This method assigns low weights to frequent words and higher weights to less frequent but more meaningful words</li>
+    </ul>
+  </li>
+  <li><strong>Similarity Measurement:</strong>
+    <ul>
+      <li>Calculating <code>cosine_similarity</code> between talk content vectors</li>
+      <li>Identifying the top 5 most similar TED talks for recommendations</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>💡 Recommendation Strategies</h2>
+
+<ul>
+  <li><strong>Content-Based Recommendations:</strong> Suggest talks similar in content to those the user liked</li>
+  <li><strong>Popularity-Based Recommendations:</strong> Suggest the most viewed TED talks</li>
+  <li><strong>Speaker-Based Recommendations:</strong> If a user engages with talks by a specific speaker, recommend other talks by the same main speaker</li>
+  <li><strong>Tag-Based Recommendations:</strong> Recommend talks sharing common tags</li>
+  <li><strong>Event-Based Recommendations:</strong> Suggest talks presented at the same event</li>
+  <li><strong>Theme-Based Recommendations:</strong> For example, if a user prefers “funny” talks, the system recommends other humorous TED talks</li>
+</ul>
+
+<h2>🚀 Deployment</h2>
+
+<p>
+  This recommendation system follows principles commonly used in e-commerce websites and social media platforms to personalize content and enhance user engagement.
+</p>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>scikit-learn</li>
+  <li>Pandas</li>
+  <li>NLP (Natural Language Processing)</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="400" alt="Developer Coding"/>
+</p>
+
+
+
