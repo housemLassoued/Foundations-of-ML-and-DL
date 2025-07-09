@@ -638,3 +638,120 @@ For each frame captured:
   <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="400" alt="Matrix GIF"/>
 </p>
 
+<h1 align="center">🩻 Lumbar Coordinate Classification</h1>
+
+<p align="center">
+  <em>Multiclass classification of lumbar spine degenerative pathologies for the RSNA 2024 Competition</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  The goal of this project is to classify medical images into four classes—LSD, OSF, SPIDER, and TSEG—in the context of the RSNA 2024 Lumbar Spine Degenerative Classification competition. This project aims to address a specific problem related to analyzing degenerative pathologies of the lumbar spine. Each class represents a distinct category or task for characterizing and diagnosing anomalies on medical scans:
+</p>
+
+<ul>
+  <li><strong>LSD</strong>: Pathology classification</li>
+  <li><strong>OSF</strong>: Structural orientation analysis</li>
+  <li><strong>SPIDER</strong>: Detection of complex anomalies</li>
+  <li><strong>TSEG</strong>: Anatomical structure segmentation</li>
+</ul>
+
+<p>
+  This contributes to more precise and automated medical diagnoses.
+</p>
+
+<h2>📊 Dataset Overview</h2>
+
+<ul>
+  <li><strong>Total Images:</strong> 1,237</li>
+  <li><strong>Class Distribution:</strong>
+    <ul>
+      <li>LSD: 515 images</li>
+      <li>OSF: 34 images</li>
+      <li>SPIDER: 210 images</li>
+      <li>TSEG: 478 images</li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  The strong class imbalance can cause bias during training, where the model may learn to predict majority classes better. Therefore, balancing the dataset was necessary to ensure equal representation for all classes.
+</p>
+
+<h2>⚙️ Processing Pipeline</h2>
+
+<ul>
+  <li><strong>Dataset Splitting:</strong>
+    <ul>
+      <li>60% training</li>
+      <li>20% validation</li>
+      <li>20% testing</li>
+    </ul>
+  </li>
+  <li><strong>Image Preprocessing:</strong>
+    <ul>
+      <li>Normalization of pixel intensities to [0,1]</li>
+      <li>Resizing from 256×256 to 224×224</li>
+      <li>Conversion from BGR to RGB</li>
+      <li>Ensuring 3 channels per image</li>
+    </ul>
+  </li>
+  <li><strong>Data Augmentation (Training Set):</strong>
+    <ul>
+      <li>Random rotations (±10 degrees)</li>
+      <li>Width and height shifts (10%)</li>
+      <li>Zoom transformations</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>🧠 Model Architecture</h2>
+
+<ul>
+  <li><strong>Feature Extractor:</strong> Pretrained ResNet50 (frozen weights)</li>
+  <li><strong>Classification Head:</strong> Multilayer Perceptron (MLP) with softmax activation</li>
+</ul>
+
+<h2>🛠️ Training Configuration</h2>
+
+<ul>
+  <li><strong>Epochs:</strong> 30 (Early stopping reduced to 17 epochs)</li>
+  <li><strong>Optimizer:</strong> Adam</li>
+  <li><strong>Learning Rate:</strong> 0.001</li>
+  <li><strong>Loss Function:</strong> Sparse Categorical Crossentropy (suitable for multiclass classification)</li>
+  <li><strong>Callbacks:</strong>
+    <ul>
+      <li>EarlyStopping (patience=10)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>✅ Results</h2>
+
+<ul>
+  <li><strong>Test Accuracy:</strong> 95.97%</li>
+</ul>
+
+<h2>🚀 Deployment</h2>
+
+<p>
+  The model is ready to be integrated into applications for automatic diagnosis and classification of lumbar spine degenerative conditions, supporting more efficient and accurate medical decision-making.
+</p>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>TensorFlow</li>
+  <li>Keras</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm55eDJhZ2h3YzVpZTBqbjBlbHR6bm9jOHR1YW5qZ3J6Mm9yMzd2aCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WFZvB7VIXBgiz3oDXE/giphy.gif" width="300" alt="Medical AI"/>
+</p>
+
