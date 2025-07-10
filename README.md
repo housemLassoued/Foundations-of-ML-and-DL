@@ -839,5 +839,139 @@ For each frame captured:
   <img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="400" alt="Developer Coding"/>
 </p>
 
+<h1 align="center">♻️ Recyclable and Household Waste Plastic Detection</h1>
 
+<p align="center">
+  <em>Multiclass classification of plastic waste items using deep learning on the Recyclable and Household Waste Classification dataset</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  The goal of this project is to develop a deep learning model capable of detecting plastic waste in household waste images and identifying the specific plastic item category. To achieve this, we leveraged the <a href="https://www.kaggle.com/datasets/alistairking/recyclable-and-household-waste-classification">Recyclable and Household Waste Classification dataset</a> from Kaggle.
+</p>
+
+<p>
+  This project aims to address the growing need for accurate sorting of recyclable materials by distinguishing between plastic and non-plastic objects and classifying plastic waste into detailed subcategories.
+</p>
+
+<h2>📊 Dataset Overview</h2>
+
+<ul>
+  <li><strong>Original Dataset Structure:</strong>
+    <ul>
+      <li>For each waste item, two folders: <code>default</code> and <code>real_world</code>, each containing 250 images</li>
+    </ul>
+  </li>
+  <li><strong>Dataset Reorganization:</strong>
+    <ul>
+      <li>Identified plastic and non-plastic items</li>
+      <li>Split images into:
+        <ul>
+          <li>75% training</li>
+          <li>15% validation</li>
+          <li>15% testing</li>
+        </ul>
+      </li>
+      <li>New structure:
+        <ul>
+          <li><code>train/</code></li>
+          <li><code>validation/</code></li>
+          <li><code>test/</code></li>
+        </ul>
+        Each split contains:
+        <ul>
+          <li><code>plastic/</code>: all plastic items</li>
+          <li><code>not_plastic/</code>: all non-plastic items</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  For labeling, each image of a plastic item was assigned a distinct class label, while all non-plastic images shared a single label, resulting in a supervised multiclass classification problem.
+</p>
+
+<h2>⚙️ Processing Pipeline</h2>
+
+<ul>
+  <li><strong>Image Preprocessing:</strong>
+    <ul>
+      <li>Resized from 256×256×3 to 224×224×3</li>
+      <li>Normalized pixel values to [0,1]</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>🧠 Model Architecture</h2>
+
+<ul>
+  <li><strong>Feature Extractor:</strong> Pretrained VGG16 (frozen weights)</li>
+  <li><strong>Classification Head:</strong> Multilayer Perceptron (MLP) with softmax activation for multiclass output</li>
+</ul>
+
+<h2>🛠️ Training Configuration</h2>
+
+<ul>
+  <li><strong>Epochs:</strong> 10</li>
+  <li><strong>Optimizer:</strong> Adam</li>
+  <li><strong>Learning Rate:</strong> 0.0001</li>
+  <li><strong>Loss Function:</strong> Sparse Categorical Crossentropy</li>
+  <li><strong>Frozen Weights:</strong> VGG16 base layers were not updated during training</li>
+</ul>
+
+<h2>✅ Results</h2>
+
+<ul>
+  <li><strong>Overall Test Accuracy:</strong> 91%</li>
+</ul>
+
+<p><strong>Classification Report:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1-Score</th>
+      <th>Support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>plastic_cup_lids</td><td>0.81</td><td>0.82</td><td>0.82</td><td>73</td></tr>
+    <tr><td>plastic_detergent_bottles</td><td>0.93</td><td>0.77</td><td>0.85</td><td>71</td></tr>
+    <tr><td>plastic_food_containers</td><td>0.91</td><td>0.74</td><td>0.82</td><td>69</td></tr>
+    <tr><td>plastic_shopping_bags</td><td>0.90</td><td>0.76</td><td>0.82</td><td>70</td></tr>
+    <tr><td>plastic_soda_bottles</td><td>0.79</td><td>0.80</td><td>0.79</td><td>70</td></tr>
+    <tr><td>plastic_straws</td><td>0.87</td><td>0.78</td><td>0.82</td><td>67</td></tr>
+    <tr><td>plastic_trash_bags</td><td>0.96</td><td>0.71</td><td>0.82</td><td>69</td></tr>
+    <tr><td>plastic_water_bottles</td><td>0.77</td><td>0.66</td><td>0.71</td><td>67</td></tr>
+    <tr><td>disposable_plastic_cutlery</td><td>0.92</td><td>0.79</td><td>0.85</td><td>73</td></tr>
+    <tr><td>Not Plastic</td><td>0.93</td><td>0.97</td><td>0.95</td><td>1471</td></tr>
+  </tbody>
+</table>
+
+<h2>🚀 Deployment</h2>
+
+<p>
+  The model can be integrated into waste management and recycling systems to automate the identification and classification of plastic waste, promoting more efficient sorting and recycling processes.
+</p>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>TensorFlow</li>
+  <li>Keras</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/LMt9638dO8dftAjtco/giphy.gif" width="300" alt="Developer Coding"/>
+</p>
 
