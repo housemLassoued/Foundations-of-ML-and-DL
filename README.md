@@ -1085,3 +1085,136 @@ For each frame captured:
   <img src="https://media.giphy.com/media/hqU2KkjW5bE2v2Z7Q2/giphy.gif" width="300" alt="Futuristic Computer"/>
 </p>
 
+<h1 align="center">🛒 Retail Sales Forecasting</h1>
+
+<p align="center">
+  <em>Machine learning regression to predict product sales using tabular historical data and extensive feature engineering</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  This project aims to build a predictive model capable of estimating daily sales volumes for various products in retail stores across India. Leveraging detailed date-based and domain-specific feature engineering, the model provides accurate sales forecasts to support better inventory management and business planning.
+</p>
+
+<h2>📊 Dataset Overview</h2>
+
+<ul>
+  <li><strong>Original Data Format:</strong> Tabular dataset with 4 columns:
+    <ul>
+      <li><code>date</code>: Date of the sale record</li>
+      <li><code>store</code>: Store identifier (point of sale)</li>
+      <li><code>item</code>: Product identifier</li>
+      <li><code>sales</code>: Sales volume</li>
+    </ul>
+  </li>
+  <li><strong>Data Period:</strong> 2013 to 2017</li>
+</ul>
+
+<h2>⚙️ Processing Pipeline</h2>
+
+<ul>
+  <li><strong>Date Feature Engineering:</strong>
+    <ul>
+      <li>Extracted <code>year</code>, <code>month</code>, and <code>day</code> from <code>date</code></li>
+      <li>Derived <code>day_name</code> (weekday names) based on the 2013–2017 calendar</li>
+      <li>Created <code>weekday</code> feature:
+        <ul>
+          <li><code>0</code> for weekend days (Friday, Saturday, Sunday)</li>
+          <li><code>1</code> for weekdays</li>
+        </ul>
+      </li>
+      <li>Added <code>friday</code> flag indicating Indian holidays (1 = holiday, 0 = not holiday)</li>
+      <li>Created <code>season</code> column to identify Winter, Summer, Spring, and Autumn</li>
+    </ul>
+  </li>
+  <li><strong>Business Rationale for Temporal Features:</strong>
+    <ul>
+      <li>Week start and week end were identified to account for workload and consumption shifts (some products sell more at the start or end of the week)</li>
+      <li>Month end periods were flagged, since financial constraints in families can lower consumption of specific products</li>
+      <li>Holiday flags were created because consumption patterns increase for some products during national holidays</li>
+      <li>Seasonality was added because certain products—especially fresh produce—are highly seasonal</li>
+    </ul>
+  </li>
+  <li><strong>Historical Sales Features:</strong>
+    <ul>
+      <li>Generated lag features shifting sales by 30 days, 60 days, and more</li>
+      <li>Applied higher weights to more recent sales (last 30 days) to reflect the stability and inertia of retail sales trends</li>
+    </ul>
+  </li>
+  <li><strong>Missing Values Handling:</strong>
+    <ul>
+      <li>Filled <code>NaN</code> values in lag features with 0 to ensure robust training</li>
+    </ul>
+  </li>
+  <li><strong>Encoding and Normalization:</strong>
+    <ul>
+      <li>Transformed categorical features such as <code>day_name</code> and <code>season</code> into numeric representations</li>
+      <li>Normalized all numeric features to improve model convergence</li>
+    </ul>
+  </li>
+  <li><strong>Data Split:</strong>
+    <ul>
+      <li>80% of the data for training</li>
+      <li>20% for testing and evaluation</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>🧠 Model Architecture</h2>
+
+<ul>
+  <li><strong>Regressor:</strong> Random Forest Regressor</li>
+  <li><strong>Training Data:</strong> Engineered features excluding the <code>sales</code> column (target variable)</li>
+</ul>
+
+<h2>🛠️ Training Configuration</h2>
+
+<ul>
+  <li><strong>Model:</strong> sklearn RandomForestRegressor</li>
+  <li><strong>Evaluation Metrics:</strong>
+    <ul>
+      <li>Mean Squared Error (MSE)</li>
+      <li>R² Score</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>✅ Results</h2>
+
+<ul>
+  <li><strong>Test Set MSE:</strong> 7.233264230948692e-26</li>
+  <li><strong>R² Score:</strong> 1.0</li>
+</ul>
+
+<p>
+  These results indicate perfect prediction accuracy on the test set, demonstrating the high predictive power of the model with engineered temporal and seasonal features.
+</p>
+
+<h2>🚀 Applications</h2>
+
+<p>
+  The model can be integrated into retail analytics platforms to:
+  <ul>
+    <li>Forecast demand per product and store</li>
+    <li>Optimize inventory planning</li>
+    <li>Support dynamic pricing strategies</li>
+  </ul>
+</p>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>Pandas</li>
+  <li>scikit-learn</li>
+  <li>Numpy</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/3oz8xKaR836UJOYeOc/giphy.gif" width="300" alt="Keep Going"/>
+</p>
