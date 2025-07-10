@@ -932,7 +932,7 @@ For each frame captured:
 
 <p><strong>Classification Report:</strong></p>
 
-<table>
+<table align="center">
   <thead>
     <tr>
       <th>Class</th>
