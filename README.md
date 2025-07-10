@@ -1218,3 +1218,149 @@ For each frame captured:
 <p align="center">
   <img src="https://media.giphy.com/media/3oz8xKaR836UJOYeOc/giphy.gif" width="300" alt="Keep Going"/>
 </p>
+
+<h1 align="center">🧑‍💻 Face Recognition System with Pretrained Deep Learning Models</h1>
+
+<p align="center">
+  <em>Robust face detection and verification pipeline leveraging MTCNN and InceptionResNetV1 embeddings for secure authentication and surveillance</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  This project implements a facial recognition system designed to enhance security in private spaces and support biometric authentication. The system leverages pretrained models to detect faces in images and compare them against reference faces to verify identity.
+</p>
+
+<h2>🧩 System Overview</h2>
+
+<ul>
+  <li><strong>Face Detection:</strong> Multi-task Cascaded Convolutional Networks (MTCNN)</li>
+  <li><strong>Embedding Generation:</strong> InceptionResNetV1 pretrained on VGGFace2 dataset</li>
+  <li><strong>Similarity Metric:</strong> Euclidean distance between embeddings</li>
+</ul>
+
+<h2>⚙️ Processing Pipeline</h2>
+
+<h3>🔍 Face Detection with MTCNN</h3>
+<ul>
+  <li>The MTCNN model identifies faces in an input image.</li>
+  <li>It returns bounding box coordinates around each detected face along with confidence scores.</li>
+  <li>Faces are cropped from the original image based on these bounding boxes.</li>
+</ul>
+
+<h3>🧠 Embedding Generation with InceptionResNetV1</h3>
+<ul>
+  <li>Cropped faces are converted to NumPy arrays and then to PyTorch tensors compatible with InceptionResNetV1.</li>
+  <li>The model generates compact embeddings capturing essential facial features.</li>
+</ul>
+
+<h3>🆚 Embedding Comparison</h3>
+<ul>
+  <li>Embeddings of unknown faces are compared with embeddings of reference faces.</li>
+  <li>Euclidean distance is computed between embeddings:
+    <ul>
+      <li>If the distance is below a defined threshold (e.g., <code>0.6</code>), the faces are considered a match.</li>
+      <li>Otherwise, the system concludes no match exists.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>⚠️ Edge Cases</h3>
+<ul>
+  <li>If no faces are detected, the system returns an appropriate message.</li>
+  <li>If multiple faces are detected, each is compared individually to the reference embeddings.</li>
+</ul>
+
+<h2>🔬 Detailed Workflow</h2>
+
+<ol>
+  <li><strong>Image Loading:</strong>
+    <ul>
+      <li>A reference image (e.g., from an employee database) is loaded, and embeddings are generated.</li>
+      <li>An unknown image (e.g., captured by a surveillance camera) is processed in the same way.</li>
+    </ul>
+  </li>
+  <li><strong>Face Processing:</strong>
+    <ul>
+      <li>Detected faces are cropped and converted to tensors.</li>
+      <li>Embeddings are generated using the pretrained InceptionResNetV1.</li>
+    </ul>
+  </li>
+  <li><strong>Embedding Comparison:</strong>
+    <ul>
+      <li>Distances are calculated between unknown embeddings and reference embeddings.</li>
+      <li>The <code>compare_faces</code> function evaluates whether a match exists based on the threshold.</li>
+    </ul>
+  </li>
+  <li><strong>Final Result:</strong>
+    <ul>
+      <li>If a match is found: <em>"Person recognized!"</em></li>
+      <li>If no match is found: <em>"Person not recognized."</em></li>
+    </ul>
+  </li>
+</ol>
+
+<h2>🛠️ Technical Details</h2>
+
+<ul>
+  <li><strong>MTCNN:</strong>
+    <ul>
+      <li>Used for face detection and returns bounding boxes and confidence scores.</li>
+    </ul>
+  </li>
+  <li><strong>InceptionResNetV1:</strong>
+    <ul>
+      <li>Pretrained on VGGFace2 dataset.</li>
+      <li>Generates robust embeddings for face comparison.</li>
+    </ul>
+  </li>
+  <li><strong>Euclidean Distance:</strong>
+    <ul>
+      <li>Measures similarity between two embeddings.</li>
+      <li>A threshold of <code>0.6</code> is commonly used for matching (configurable).</li>
+    </ul>
+  </li>
+  <li><strong>Edge Handling:</strong>
+    <ul>
+      <li>If no faces are detected, the system notifies the user.</li>
+      <li>If multiple faces are present, each is compared individually.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>🚀 Potential Applications</h2>
+
+<ul>
+  <li><strong>Private Space Security:</strong>
+    <ul>
+      <li>Restrict access to sensitive areas by verifying identities via facial recognition.</li>
+    </ul>
+  </li>
+  <li><strong>Biometric Authentication:</strong>
+    <ul>
+      <li>Serve as an alternative or complement to passwords and PINs for secure login.</li>
+    </ul>
+  </li>
+  <li><strong>Automated Surveillance:</strong>
+    <ul>
+      <li>Integrate with cameras to identify suspects or flagged individuals automatically.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>PyTorch</li>
+  <li>Facenet-pytorch</li>
+  <li>NumPy</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/xUPGcguWZHRC2HyBRS/giphy.gif" width="300" alt="Face Recognition"/>
+</p>
