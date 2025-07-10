@@ -634,6 +634,7 @@ For each frame captured:
   <li>MediaPipe</li>
   <li>OpenCV</li>
 </ul>
+<hr/>
 <p align="center">
   <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="400" alt="Matrix GIF"/>
 </p>
@@ -973,5 +974,114 @@ For each frame captured:
 
 <p align="center">
   <img src="https://media.giphy.com/media/LMt9638dO8dftAjtco/giphy.gif" width="300" alt="Developer Coding"/>
+</p>
+<h1 align="center">🗣️ Simple Voice Assistant</h1>
+
+<p align="center">
+  <em>A Python-based voice assistant capable of interpreting and executing spoken commands in real time</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  This project aims to create an interactive voice assistant that interprets spoken commands through a microphone and performs specific actions accordingly. The assistant leverages multiple Python libraries to handle text-to-speech synthesis, speech recognition, external program execution, and access to online services such as Wikipedia, YouTube, and Gmail.
+</p>
+
+<h2>📚 Libraries Used</h2>
+
+<ul>
+  <li><strong>pyttsx3:</strong> Provides text-to-speech synthesis to convert text into spoken output.</li>
+  <li><strong>speech_recognition:</strong> Captures and transcribes voice commands using Google Speech Recognition.</li>
+  <li><strong>subprocess:</strong> Executes external programs (e.g., launching Chrome).</li>
+  <li><strong>datetime:</strong> Retrieves the current time information.</li>
+  <li><strong>wikipedia:</strong> Performs Wikipedia searches and returns short summaries.</li>
+  <li><strong>webbrowser:</strong> Opens specific web pages in the default browser.</li>
+  <li><strong>smtplib:</strong> Manages sending emails via SMTP.</li>
+  <li><strong>pywhatkit:</strong> Plays YouTube videos or executes web actions.</li>
+  <li><strong>pyjokes:</strong> Generates humorous jokes to entertain the user.</li>
+</ul>
+
+<h2>⚙️ Program Workflow</h2>
+
+<ul>
+  <li><strong>Voice Engine Initialization:</strong>
+    <ul>
+      <li>The voice engine (<code>pyttsx3</code>) is initialized to convert text to speech.</li>
+      <li>Available voices are retrieved, and a specific voice (e.g., female) is selected for interaction.</li>
+    </ul>
+  </li>
+  <li><strong>Speech Recognition:</strong>
+    <ul>
+      <li>The <code>cmd()</code> function manages speech recognition.</li>
+      <li>Background noise is automatically adjusted to improve recognition accuracy.</li>
+      <li>Audio is captured via the microphone and transcribed into text using Google Speech Recognition.</li>
+      <li>If the command is not recognized or an error occurs, an appropriate message is displayed.</li>
+    </ul>
+  </li>
+  <li><strong>Command Processing:</strong>
+    <ul>
+      <li>An infinite loop continuously listens for user commands.</li>
+      <li>Each command is analyzed for specific keywords to trigger the corresponding action:</li>
+      <ul>
+        <li><strong>Greetings:</strong> If the command contains "bonjour", the assistant responds, "Bonjour! How can I help you?"</li>
+        <li><strong>Launching Chrome:</strong> If "chrome" is mentioned, Chrome is opened via <code>subprocess</code>.</li>
+        <li><strong>Wikipedia Search:</strong> If "wikipedia" is detected, the assistant extracts the search term, queries Wikipedia, and reads a three-sentence summary aloud.</li>
+        <li><strong>Web Navigation:</strong> If "jumia" is mentioned, the Jumia website is opened in the default browser.</li>
+        <li><strong>Time Announcement:</strong> If "time" is included, the current time is spoken.</li>
+        <li><strong>YouTube Playback:</strong> If "play" is used, the assistant plays a YouTube video matching the extracted terms.</li>
+        <li><strong>Email Sending:</strong> If "email" is mentioned, the assistant prompts for the message content and recipient address, then sends the email using <code>smtplib</code>.</li>
+        <li><strong>Jokes:</strong> If "joke" is detected, a joke is read aloud.</li>
+        <li><strong>Exit:</strong> If "au revoir" is spoken, the assistant says "Goodbye!" and exits the main loop.</li>
+      </ul>
+    </ul>
+  </li>
+  <li><strong>Error Handling:</strong>
+    <ul>
+      <li>If a command is unrecognized or does not match any predefined action, the assistant informs the user accordingly.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>✨ Key Features</h2>
+
+<ul>
+  <li><strong>Voice Customization:</strong> Users can select among different available voices via <code>pyttsx3</code>.</li>
+  <li><strong>Command Flexibility:</strong> The program is designed to be easily extendable with new functionalities.</li>
+  <li><strong>Security:</strong> Using <code>smtplib</code> requires sensitive information (e.g., email credentials). These must be handled securely to avoid risks.</li>
+  <li><strong>Improved Recognition:</strong> Automatic background noise adjustment and Google Speech Recognition enhance accuracy.</li>
+</ul>
+
+<h2>🚧 Limitations & Possible Improvements</h2>
+
+<ul>
+  <li><strong>Multilingual Support:</strong> Currently optimized for French commands. Future development could add multilingual capabilities.</li>
+  <li><strong>SMTP Error Handling:</strong> Email functionality could include more robust error checks (e.g., validating email addresses or handling connection issues).</li>
+  <li><strong>Additional APIs:</strong> Third-party APIs (weather, news, smart home) could enrich functionality.</li>
+  <li><strong>Graphical Interface:</strong> A GUI could be implemented to improve user experience.</li>
+</ul>
+
+<h2>✅ Conclusion</h2>
+
+<p>
+  This voice assistant provides a solid foundation for automated voice interaction systems. While it currently performs simple tasks, it offers considerable potential for further enhancements in personalization, security, and advanced capabilities.
+</p>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>pyttsx3</li>
+  <li>SpeechRecognition</li>
+  <li>Wikipedia</li>
+  <li>pywhatkit</li>
+  <li>smtplib</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/hqU2KkjW5bE2v2Z7Q2/giphy.gif" width="300" alt="Futuristic Computer"/>
 </p>
 
