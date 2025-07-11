@@ -1364,3 +1364,172 @@ For each frame captured:
 <p align="center">
   <img src="https://media.giphy.com/media/xUPGcguWZHRC2HyBRS/giphy.gif" width="300" alt="Face Recognition"/>
 </p>
+
+<h1 align="center">🚗 Tabular Data Generation and Fuel Consumption Prediction</h1>
+
+<p align="center">
+  <em>Regression modeling and synthetic data generation with GANs to predict vehicle fuel consumption from technical specifications</em>
+</p>
+
+<hr/>
+
+<h2>🎯 Objective</h2>
+
+<p>
+  This project aims to design a supervised regression model to predict a vehicle’s fuel consumption (measured in miles per gallon, or <strong>mpg</strong>) based on its technical characteristics. In addition to conventional modeling, it explores the use of Generative Adversarial Networks (GANs) to generate realistic synthetic tabular data for validation and data augmentation.
+</p>
+
+<h2>📊 Dataset Overview</h2>
+
+<ul>
+  <li><strong>Source:</strong> <code>auto-mpg.csv</code></li>
+  <li><strong>Features:</strong>
+    <ul>
+      <li>cylinders</li>
+      <li>displacement</li>
+      <li>horsepower</li>
+      <li>weight</li>
+      <li>acceleration</li>
+    </ul>
+  </li>
+  <li><strong>Target:</strong> miles per gallon (mpg)</li>
+</ul>
+
+<h2>⚙️ Processing Pipeline</h2>
+
+<h3>🧹 Data Preparation</h3>
+<ul>
+  <li>Raw data was loaded from the CSV file.</li>
+  <li>Missing values (represented as <code>NA</code> or <code>?</code>) were imputed using the median of each column.</li>
+  <li>The target variable <code>mpg</code> was separated from the input features.</li>
+  <li>Dataset split:
+    <ul>
+      <li>80% training set</li>
+      <li>20% test set</li>
+    </ul>
+  </li>
+  <li>Features were normalized using MinMaxScaler to ensure balanced contributions to learning.</li>
+</ul>
+
+<h3>🔮 Supervised Regression Model</h3>
+<ul>
+  <li>A regression model based on a Multi-Layer Perceptron (MLP) was developed using TensorFlow/Keras.</li>
+  <li><strong>Architecture:</strong>
+    <ul>
+      <li>Input layer matching the number of features</li>
+      <li>3 hidden fully connected layers:
+        <ul>
+          <li>50 neurons (ReLU)</li>
+          <li>25 neurons (ReLU)</li>
+          <li>12 neurons (ReLU)</li>
+        </ul>
+      </li>
+      <li>Output layer with a single unit predicting <code>mpg</code></li>
+    </ul>
+  </li>
+  <li><strong>Training:</strong>
+    <ul>
+      <li>Iterations: 1,000 epochs</li>
+      <li>Early stopping with patience of 5 to prevent overfitting</li>
+      <li>Optimizer: Adam</li>
+      <li>Loss function: Mean Squared Error (MSE)</li>
+    </ul>
+  </li>
+  <li><strong>Evaluation:</strong>
+    <ul>
+      <li>Test set RMSE: 3.19, indicating good predictive performance</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>🧬 Synthetic Data Generation with GANs</h3>
+<ul>
+  <li>To validate the model on larger, more diverse cohorts, a Generative Adversarial Network (GAN) was trained to produce realistic synthetic data.</li>
+  <li><strong>GAN Components:</strong>
+    <ul>
+      <li><strong>Generator:</strong>
+        <ul>
+          <li>Learns the training data distribution and generates synthetic samples from random noise.</li>
+          <li>Architecture:
+            <ul>
+              <li>Fully connected layers</li>
+              <li>LeakyReLU activations</li>
+              <li>Batch Normalization for training stability</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Discriminator:</strong>
+        <ul>
+          <li>Acts as a binary classifier to distinguish real from synthetic data.</li>
+          <li>Architecture:
+            <ul>
+              <li>Fully connected layers</li>
+              <li>LeakyReLU activations</li>
+              <li>Sigmoid activation in the output layer</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Training Process:</strong>
+    <ul>
+      <li>Alternating steps:
+        <ul>
+          <li>Training the discriminator to improve real vs. fake discrimination</li>
+          <li>Training the generator to produce samples that fool the discriminator</li>
+        </ul>
+      </li>
+      <li>Iterations: 10,000 epochs</li>
+    </ul>
+  </li>
+  <li>The trained generator produced synthetic samples from Gaussian noise.</li>
+</ul>
+
+<h3>✅ Evaluation with Synthetic Data</h3>
+<ul>
+  <li>Synthetic data was denormalized to match the original scale.</li>
+  <li>The regression model was applied to predict <code>mpg</code> on synthetic inputs.</li>
+  <li>RMSE between generated target values and predictions: 0.0, indicating near-perfect alignment with training distributions.</li>
+</ul>
+
+<h2>🚀 Potential Applications</h2>
+
+<ul>
+  <li><strong>Fuel Consumption Prediction:</strong>
+    <ul>
+      <li>Automotive manufacturers and consumers can estimate vehicle fuel efficiency based on technical specifications.</li>
+    </ul>
+  </li>
+  <li><strong>Data Augmentation:</strong>
+    <ul>
+      <li>GANs can create realistic synthetic datasets when real data is limited or hard to collect.</li>
+    </ul>
+  </li>
+  <li><strong>Model Validation:</strong>
+    <ul>
+      <li>Synthetic data enables stress-testing and validation of machine learning models under varied scenarios.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>🧰 Technologies Used</h2>
+
+<ul>
+  <li>Python</li>
+  <li>TensorFlow</li>
+  <li>Keras</li>
+  <li>NumPy</li>
+  <li>Pandas</li>
+</ul>
+
+<hr/>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="300" alt="Done"/>
+</p>
+
+
+
+
